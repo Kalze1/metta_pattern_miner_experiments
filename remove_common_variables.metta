@@ -51,9 +51,9 @@
     ($variables1 (extract-variables $pattern1 ()))
     ($variables2 (extract-variables $pattern2 ()))
     ($duplicates (find-duplicate-variables $variables1 $variables2 ()))
-    ) (superpose ((replace-variables $pattern1 $duplicates) (replace-variables $pattern2 $duplicates)))
+    ) (superpose ($pattern1 (replace-variables $pattern2 $duplicates)))
 ))
 
 
 ; Testing the implementation of removing duplicated variables
-!(make-difference (inheritance $RRR $VVV) (some-link $RRR $SSS))
+! (make-difference (inheritance $RRR $VVV) (some-link $RRR $SSS))

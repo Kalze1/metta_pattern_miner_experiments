@@ -1,7 +1,12 @@
+from hyperon import *
 import random
 import string
 
 
-def gen_random() -> str:
-    return "$" + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(4))
+def gen_random() :
+    random_string = ''.join(random.choices(string.ascii_uppercase, k=3))
+    random_var = V(random_string)
+    return random_var
+
+
 
